@@ -10,3 +10,4 @@ average_grades=[sum(grades[0])/len(grades[0]), sum(grades[1])/len(grades[1]), su
 print(average_grades)
 dictionary_average_grades=dict(zip(sort_students,average_grades))
 print(dictionary_average_grades)
+
