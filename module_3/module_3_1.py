@@ -8,7 +8,7 @@ def string_info(string): #Функция string_info принимает аргу
     print (len(string), string.upper(), string.lower())
 def is_contains (string, list_to_search):  #Функция is_contains принимает два аргумента: строку и список, и возвращает True, если строка находится в этом списке, False - если отсутствует. Регистром строки при проверке пренебречь: UrbaN ~ URBAN.
     count_calls()
-    print(string.upper() in [s.upper() for s in list_to_search])
+    print(string.upper() in (item.upper() for item in list_to_search))
 string_info('жАра')
 string_info('Fuse')
 string_info('what about my money?')
