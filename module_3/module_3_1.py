@@ -1,39 +1,17 @@
-'''Вам необходимо написать 3 функции:
-    Функция count_calls подсчитывающая вызовы остальных функций.
-    Функция string_info принимает аргумент - строку и возвращает кортеж из: длины этой строки, строку в верхнем регистре, строку в нижнем регистре.
-    Функция is_contains принимает два аргумента: строку и список, и возвращает True, если строка находится в этом списке, False - если отсутствует. Регистром строки при проверке пренебречь: UrbaN ~ URBAN.
-Пункты задачи:
-    Создать переменную calls = 0 вне функций.
-    Создать функцию count_calls и изменять в ней значение переменной calls. Эта функция должна вызываться в остальных двух функциях.
-    Создать функцию string_info с параметром string и реализовать логику работы по описанию.
-    Создать функцию is_contains с двумя параметрами string и list_to_search, реализовать логику работы по описанию.
-    Вызвать соответствующие функции string_info и is_contains произвольное кол-во раз с произвольными данными.
-    Вывести значение переменной calls на экран(в консоль).'''
 calls = 0
-string = ()
-#string = input('Введите произвольный текст ')
 def count_calls(): #Функция count_calls подсчитывающая вызовы остальных функций
     global calls
     calls += 1
-def string_info(): #Функция string_info принимает аргумент - строку и возвращает кортеж из: длины
+def string_info(string): #Функция string_info принимает аргумент - строку и возвращает кортеж из: длины
     # этой строки, строку в верхнем регистре, строку в нижнем регистре.
-    global string
-    string = input('Введите произвольный текст №1 ')
     count_calls()
-    _tuple = (len(string), string.upper(), string.lower())
-    print('Длина строки, верх.регистр, ниж.регистр :', _tuple)
-def _is_contains(): #__contains__(self, item):Функция is_contains принимает два аргумента: строку и список, и возвращает True,
-    # если строка находится в этом списке, False - если отсутствует. Регистром строки при проверке пренебречь.
-    #global string
-    string.upper
-    print(string)
-    list_to_search = [input('Введите произвольный текст №2 ').upper(), input('Введите произвольный текст №3 ').upper(), input('Введите произвольный текст №4 ').upper()]
-    print('Список для поиска: ', list_to_search)
-    if string.upper in list_to_search:
-        print('Совпадения найдены')
-    else:
-        print('Нету таких')
+    print (len(string), string.upper(), string.lower())
+def is_contains (string, list_to_search):  #Функция is_contains принимает два аргумента: строку и список, и возвращает True, если строка находится в этом списке, False - если отсутствует. Регистром строки при проверке пренебречь: UrbaN ~ URBAN.
     count_calls()
-string_info()
-_is_contains()
+    print(string.upper() in [s.upper() for s in list_to_search])
+string_info('жАра')
+string_info('Fuse')
+string_info('what about my money?')
+is_contains('string', ['RinG', 'WING', 'strong'])
+is_contains('abCDe', ['ABcdE', 'AbCdE', 'qwerty'])
 print('Количество вызовов функций ', calls)
