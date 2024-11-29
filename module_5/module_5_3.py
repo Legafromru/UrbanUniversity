@@ -20,22 +20,40 @@ class House:
                 print(i)
 
     def __eq__(self, other):
-        return self.number_of_floors == other
+        if isinstance(other, House):
+            return self.number_of_floors == other.number_of_floors
+        elif isinstance(other, int):
+            return self.number_of_floors == other
 
     def __lt__(self, other):
-        return self.number_of_floors < other
+        if isinstance(other, House):
+            return self.number_of_floors < other.number_of_floors
+        elif isinstance(other, int):
+            return self.number_of_floors < other
 
     def __le__(self, other):
-        return self.number_of_floors <= other
+        if isinstance(other, House):
+            return self.number_of_floors <= other.number_of_floors
+        elif isinstance(other, int):
+            return self.number_of_floors <= other
 
     def __gt__(self, other):
-        return self.number_of_floors > other
+        if isinstance(other, House):
+            return self.number_of_floors > other.number_of_floors
+        elif isinstance(other, int):
+            return self.number_of_floors > other
 
     def __ge__(self, other):
-        return self.number_of_floors >= other
+        if isinstance(other, House):
+            return self.number_of_floors >= other.number_of_floors
+        elif isinstance(other, int):
+            return self.number_of_floors >= other
 
     def __ne__(self, other):
-        return self.number_of_floors != other
+        if isinstance(other, House):
+            return self.number_of_floors != other.number_of_floors
+        elif isinstance(other, int):
+            return self.number_of_floors != other
 
     def __add__(self, value):# __add__(self, value) - увеличивает кол-во этажей на переданное значение value, возвращает сам объект self.
         if isinstance(value, int):
