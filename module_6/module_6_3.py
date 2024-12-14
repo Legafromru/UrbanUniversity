@@ -3,7 +3,7 @@ import random  # Подключение модуля random
 class Animal: #Создаем класс Animal - класс описывающий животных
     live = True  # live = True
     sound = None  # sound = None - звук (изначально отсутствует)
-    _DEGREE_OF_DANGER = 0  # _DEGREE_OF_DANGER = 0 - степень опасности существа
+    _DEGREE_OF_DANGER = 0  # _DEGREE_OF_DANGER = 0 - степень опасности  существа
 
     def __init__(self, speed):
         self._cords = [0, 0, 0]  # _cords = [0, 0, 0] - координаты в пространстве
