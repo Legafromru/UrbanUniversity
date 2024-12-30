@@ -16,9 +16,13 @@ class Animal: #Создаем класс Animal - класс описывающ�
 
     def move(self, dx, dy, dz):
         self._cords = [int(dx) * int(self.speed), int(dy) * int(self.speed), int(dz) * int(self.speed)]
-        if self._cords[2] < 0:
+        if self._cords[2] + dz * self.speed < 0:
             print(f"It's too deep, i can't dive :(")
             self._cords[2] = 0
+        else:
+            self._cords[0] += dx * self.speed
+            self._cords[1] += dy * self.speed
+            self._cords[2] += dz * self.speed
 
     """ 2. get_cords(self), который выводит координаты в формате: "X: <координаты по x>, Y: <координаты по y>,
     Z: <координаты по z>" """
